@@ -1,0 +1,427 @@
+cc_prebuilt_library_shared {
+    name: "libVE",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libVE.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libVE.so"],
+        },
+    },
+
+    compile_multilib: "both",
+    shared_libs: ["libc++", "libc", "libcdc_base", "libcutils", "libdl",
+    "liblog", "libm", "libutils"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libvenc_common",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libvenc_common.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libvenc_common.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libc++", "libc", "libcdc_base",
+    "libcutils", "libdl", "liblog", "libm", "libutils", "libvenc_base"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libvenc_h264",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libvenc_h264.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libvenc_h264.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libcdc_base",
+    "libcutils","libutils", "liblog", "libvenc_base", "libvenc_common"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libvenc_h265",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libvenc_h265.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libvenc_h265.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libcdc_base",
+    "libcutils","libutils", "liblog", "libvenc_base","libvenc_common"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libvenc_jpeg",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libvenc_jpeg.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libvenc_jpeg.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libcdc_base",
+    "libutils","libcutils", "liblog", "libvenc_base", "libvenc_common"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libvideoengine",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libvideoengine.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libvideoengine.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libVE", "libc++", "libc", "libcdc_base", "libcutils",
+    "libdl", "liblog", "libm", "libui", "libutils"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawavs",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawavs.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawavs.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libVE", "libbinder", "libc++", "libc", "libcdc_base",
+    "libcutils", "libdl", "liblog", "libm", "libui", "libutils", "libsbm", "libfbm",
+    "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawh264",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawh264.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawh264.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libVE", "libbinder", "libc++", "libc", "libcdc_base",
+    "libcutils", "libdl", "liblog", "libm", "libui", "libutils", "libsbm", "libfbm",
+    "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawh265",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawh265.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawh265.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+}
+
+/*
+cc_prebuilt_library_shared {
+    name: "libawh265soft",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawh265soft.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawh265soft.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+    allow_undefined_symbols: true,
+}
+*/
+
+cc_prebuilt_library_shared {
+    name: "libawmjpeg",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawmjpeg.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawmjpeg.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawmjpegplus",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawmjpegplus.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawmjpegplus.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawmpeg2",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawmpeg2.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawmpeg2.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libVE", "libbinder", "libc++", "libc", "libcdc_base",
+    "libcutils", "libdl", "liblog", "libm", "libui", "libutils", "libsbm", "libfbm",
+    "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawmpeg4base",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawmpeg4base.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawmpeg4base.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libVE", "libbinder", "libc++", "libc", "libcdc_base",
+    "libcutils", "libdl", "liblog", "libm", "libui", "libutils", "libsbm", "libfbm",
+    "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawmpeg4dx",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawmpeg4dx.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawmpeg4dx.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libVE", "libawmpeg4base", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawmpeg4h263",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawmpeg4h263.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawmpeg4h263.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libVE", "libawmpeg4base", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawmpeg4normal",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawmpeg4normal.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawmpeg4normal.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libVE", "libawmpeg4base", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawmpeg4vp6",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawmpeg4vp6.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawmpeg4vp6.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libVE", "libawmpeg4base", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawvp8",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawvp8.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawvp8.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libVE", "libbinder", "libc++", "libc", "libcdc_base",
+    "libcutils", "libdl", "liblog", "libm", "libui", "libutils", "libsbm", "libfbm",
+    "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawwmv3",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawwmv3.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawwmv3.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+}
+
+
+cc_prebuilt_library_shared {
+    name: "libawvp9Hw",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawvp9Hw.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawvp9Hw.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawvp9HwAL",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawvp9HwAL.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawvp9HwAL.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libawavs2",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libawavs2.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libawavs2.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libsbm", "libfbm", "libvideoengine"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libscaledown",
+    vendor_available: true,
+    arch: {
+        arm: {
+            srcs: ["androideabi_32/libscaledown.so"],
+        },
+        arm64: {
+            srcs: ["toolchain-sunxi-aarch64-glibc/libscaledown.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libMemAdapter", "libVE", "libbinder", "libc++", "libc",
+    "libcdc_base", "libcutils", "libdl", "liblog", "libm", "libui", "libutils",
+    "libvideoengine"],
+}
+
+cc_defaults {
+    name: "libcdc_libs_defaults",
+    shared_libs: [
+        "libawh264",
+        "libawavs",
+        "libawh265",
+        "libawmjpeg",
+        "libawmjpegplus",
+        "libawmpeg2",
+        "libawmpeg4base",
+        "libawmpeg4dx",
+        "libawmpeg4h263",
+        "libawmpeg4normal",
+        "libawmpeg4vp6",
+        "libawvp8",
+        "libawwmv3",
+        "libawvp9HwAL",
+        "libawavs2",
+    ],
+}
