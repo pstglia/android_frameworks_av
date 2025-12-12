@@ -286,7 +286,8 @@ func globalDefaults(ctx android.BaseContext) ([]string) {
     sdkVersion := ctx.AConfig().PlatformSdkVersion().FinalOrFutureInt()
     platformconfig := "NOT SET"
 
-    board   := ctx.AConfig().VendorConfig("vendor").String("board")
+    //board   := ctx.AConfig().VendorConfig("vendor").String("board")
+    board   := "apollo"
     cppflags = append(cppflags,"-DTARGET_BOARD_PLATFORM=" + board)
 
     for i := 0; i < len(cdxCfgTable); i++ {
