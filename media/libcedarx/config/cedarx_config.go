@@ -314,7 +314,8 @@ func globalDefaults(ctx android.BaseContext) ([]string) {
         cppflags = append(cppflags, default_cflags...)
     }
 
-    config  := ctx.Config().VendorConfig("gpu").String("public_include_file")
+    //config  := ctx.Config().VendorConfig("gpu").String("public_include_file")
+    config := "mali-bifrost/gralloc/src/mali_gralloc_buffer.h"
     cppflags = append(cppflags, "-DGPU_PUBLIC_INCLUDE=\"" + config + "\"")
     fmt.Printf("cedarx-config: sdkVersion[%d], board[%s], platformconfig[%s]\n",
                 sdkVersion, board, platformconfig)

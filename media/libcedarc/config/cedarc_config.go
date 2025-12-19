@@ -220,7 +220,8 @@ func globalDefaults(ctx android.BaseContext) ([]string) {
         cppflags = append(cppflags, default_cflags...)
     }
 
-    config  := ctx.Config().VendorConfig("gpu").String("public_include_file")
+    //config  := ctx.Config().VendorConfig("gpu").String("public_include_file")
+    config := "mali-bifrost/gralloc/src/mali_gralloc_buffer.h"
     cppflags = append(cppflags, "-DGPU_PUBLIC_INCLUDE=\"" + config + "\"")
 
     cryptolevel := ctx.AConfig().VendorConfig("widevine").String("cryptolevel")
