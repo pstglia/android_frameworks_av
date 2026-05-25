@@ -286,8 +286,7 @@ func globalDefaults(ctx android.BaseContext) ([]string) {
     sdkVersion := ctx.AConfig().PlatformSdkVersion().FinalOrFutureInt()
     platformconfig := "NOT SET"
 
-    //board   := ctx.AConfig().VendorConfig("vendor").String("board")
-    board   := "apollo"
+    board   := ctx.AConfig().VendorConfig("vendor").String("board")
     cppflags = append(cppflags,"-DTARGET_BOARD_PLATFORM=" + board)
 
     for i := 0; i < len(cdxCfgTable); i++ {
@@ -314,8 +313,7 @@ func globalDefaults(ctx android.BaseContext) ([]string) {
         cppflags = append(cppflags, default_cflags...)
     }
 
-    //config  := ctx.Config().VendorConfig("gpu").String("public_include_file")
-    config := "mali-bifrost/gralloc/src/mali_gralloc_buffer.h"
+    config  := ctx.Config().VendorConfig("gpu").String("public_include_file")
     cppflags = append(cppflags, "-DGPU_PUBLIC_INCLUDE=\"" + config + "\"")
     fmt.Printf("cedarx-config: sdkVersion[%d], board[%s], platformconfig[%s]\n",
                 sdkVersion, board, platformconfig)

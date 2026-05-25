@@ -144,18 +144,9 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "liblive555",
-    vendor_available: true,
-    recovery_available: true,
-    check_elf_files: false,
-    arch: {
-        arm: {
-            srcs: ["lib32/anougat70/liblive555.so"],
-        },
-        arm64: {
-            srcs: ["lib64/amm60/liblive555.so"],
-        },
-    },
-    compile_multilib: "both",
+    srcs: ["lib32/anougat70/liblive555.so"],
+
+    compile_multilib: "32",
     shared_libs: ["libc++", "libc", "libcutils", "libdl", "libm", "libstdc++"],
 }
 
@@ -170,16 +161,9 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libsubdecoder",
-    arch: {
-        arm: {
-            srcs: ["lib32/anougat70/libsubdecoder.so"],
-        },
-        arm64: {
-            srcs: ["lib64/aarch64-linux-gnu/libsubdecoder.so"],
-        },
-    },
+    srcs: ["lib32/anougat70/libsubdecoder.so"],
 
-    compile_multilib: "both",
+    compile_multilib: "32",
     shared_libs: ["libc++", "libc", "libcutils", "libdl", "liblog", "libm",
     "libutils"],
 }
